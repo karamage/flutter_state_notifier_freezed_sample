@@ -34,13 +34,17 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Minimum State Notifier Example'),
+        title: Text('state_notifier sample'),
       ),
-      body: Text(
-        context.select<CounterState, int>((state) => state.count).toString(),
+      body: Center(
+        child: Text(
+          context.select<CounterState, int>((state) => state.count).toString(),
+        ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.extended(
         onPressed: () => context.read<CounterNotifier>().increment(),
+        label: Text('1'),
+        icon: Icon(Icons.add),
       ),
     );
   }
