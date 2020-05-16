@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:provider/provider.dart';
-import 'package:state_notifier/state_notifier.dart';
+import 'package:state_notifier_example/counter_state.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,18 +14,6 @@ class MyApp extends StatelessWidget {
         child: HomePage(),
       ),
     );
-  }
-}
-
-class CounterState {
-  CounterState(this.count);
-  int count = 0;
-}
-
-class CounterNotifier extends StateNotifier<CounterState> {
-  CounterNotifier() : super(CounterState(0));
-  void increment() {
-    state = CounterState(++state.count);
   }
 }
 
