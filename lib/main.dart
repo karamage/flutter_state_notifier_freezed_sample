@@ -9,8 +9,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: StateNotifierProvider<CounterNotifier, CounterState>(
-        create: (_) => CounterNotifier(),
+      home: StateNotifierProvider<CounterStateNotifier, CounterState>(
+        create: (_) => CounterStateNotifier(),
         child: HomePage(),
       ),
     );
@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => context.read<CounterNotifier>().increment(),
+        onPressed: () => context.read<CounterStateNotifier>().increment(),
         label: Text('1'),
         icon: Icon(Icons.add),
       ),
